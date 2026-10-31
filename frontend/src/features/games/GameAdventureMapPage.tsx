@@ -5,6 +5,7 @@ import type { Game, GameLevel } from '../../types';
 import { useAuth } from '../../context/AuthContext';
 import { useAudio } from '../../context/AudioContext';
 import { MiloCat } from '../../components/mascot/MiloCat';
+import { getGameTheme } from '../../utils/theme';
 
 interface GameAdventureMapPageProps {
   gameId: string;
@@ -72,6 +73,7 @@ export const GameAdventureMapPage: React.FC<GameAdventureMapPageProps> = ({
   const levels = game.levels || [];
   // Find current active level (first unlocked level that is not yet completed, or level 1)
   const currentActiveLevel = levels.find((l) => l.isUnlocked && !l.isCompleted) || levels[0];
+  const theme = getGameTheme(game.id);
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-4">
@@ -98,11 +100,13 @@ export const GameAdventureMapPage: React.FC<GameAdventureMapPageProps> = ({
 
       {/* Island Banner with Milo */}
       <div
-        className={`relative overflow-hidden rounded-3xl p-6 mb-8 text-white shadow-lg bg-gradient-to-r ${game.themeColor}`}
+        className={`relative overflow-hidden rounded-3xl p-6 mb-8 shadow-lg ${theme.headerBg} border-4 ${theme.border}`}
       >
         <div className="relative z-10 max-w-lg">
-          <h2 className="text-2xl md:text-3xl font-black mb-1 drop-shadow-sm">{game.subtitle}</h2>
-          <p className="text-white/90 text-sm md:text-base font-bold drop-shadow-sm">
+          <h2 className={`text-2xl md:text-3xl font-black mb-1.5 ${theme.titleColor} drop-shadow-sm`}>
+            {game.subtitle}
+          </h2>
+          <p className={`text-sm md:text-base font-bold ${theme.subtitleColor} drop-shadow-sm leading-relaxed`}>
             {game.description}
           </p>
         </div>
@@ -114,7 +118,7 @@ export const GameAdventureMapPage: React.FC<GameAdventureMapPageProps> = ({
 
       {/* Adventure Trail Path */}
       <div className="relative py-6 max-w-xl mx-auto">
-        <h3 className="text-center font-black text-xl text-slate-700 mb-8">
+        <h3 className="text-center font-black text-xl text-slate-800 mb-8">
           🐾 Jalur Stasiun Petualangan Milo
         </h3>
 
@@ -154,11 +158,11 @@ export const GameAdventureMapPage: React.FC<GameAdventureMapPageProps> = ({
                     }}
                     className={`w-20 h-20 md:w-24 md:h-24 rounded-3xl border-4 flex flex-col items-center justify-center font-black transition-all transform shadow-lg relative ${
                       isCurrent
-                        ? 'bg-amber-400 border-white text-white ring-4 ring-amber-400/60 scale-110 animate-bounce'
+                        ? 'bg-amber-400 border-white text-slate-900 ring-4 ring-amber-400/80 scale-110 animate-bounce'
                         : isUnlocked
                         ? lvl.isCompleted
-                          ? 'bg-emerald-400 border-white text-white active:scale-95'
-                          : 'bg-white border-amber-300 text-slate-800 hover:border-amber-400 active:scale-95'
+                          ? 'bg-emerald-500 border-white text-white active:scale-95'
+                          : 'bg-white border-amber-400 text-slate-800 hover:bg-amber-50 active:scale-95'
                         : 'bg-slate-200 border-slate-300 text-slate-400 cursor-not-allowed opacity-75'
                     }`}
                   >
@@ -189,8 +193,8 @@ export const GameAdventureMapPage: React.FC<GameAdventureMapPageProps> = ({
                       : 'border-slate-200 text-slate-400'
                   }`}
                 >
-                  <p className="font-black text-sm md:text-base leading-tight">{lvl.title}</p>
-                  <p className="text-xs text-slate-500 line-clamp-1 mt-0.5">
+                  <p className="font-black text-sm md:text-base leading-tight text-slate-800">{lvl.title}</p>
+                  <p className="text-xs text-slate-600 font-bold line-clamp-1 mt-0.5">
                     {lvl.description}
                   </p>
                 </div>

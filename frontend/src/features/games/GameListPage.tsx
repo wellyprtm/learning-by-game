@@ -6,6 +6,7 @@ import { useAuth } from '../../context/AuthContext';
 import { useAudio } from '../../context/AudioContext';
 import { MiloCat } from '../../components/mascot/MiloCat';
 import { AudioNarratorBubble } from '../../components/common/AudioNarratorBubble';
+import { getGameTheme } from '../../utils/theme';
 
 interface GameListPageProps {
   onSelectGame: (gameId: string) => void;
@@ -53,13 +54,13 @@ export const GameListPage: React.FC<GameListPageProps> = ({
   const getGameIcon = (iconName: string) => {
     switch (iconName) {
       case 'BookOpen':
-        return <BookOpen className="w-10 h-10 md:w-12 md:h-12 text-amber-500" />;
+        return <BookOpen className="w-10 h-10 md:w-12 md:h-12" />;
       case 'Sparkles':
-        return <Sparkles className="w-10 h-10 md:w-12 md:h-12 text-emerald-500" />;
+        return <Sparkles className="w-10 h-10 md:w-12 md:h-12" />;
       case 'Fish':
-        return <Fish className="w-10 h-10 md:w-12 md:h-12 text-pink-500" />;
+        return <Fish className="w-10 h-10 md:w-12 md:h-12" />;
       default:
-        return <Sparkles className="w-10 h-10 md:w-12 md:h-12 text-amber-500" />;
+        return <Sparkles className="w-10 h-10 md:w-12 md:h-12" />;
     }
   };
 
@@ -105,47 +106,51 @@ export const GameListPage: React.FC<GameListPageProps> = ({
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {games.map((game) => (
-              <div
-                key={game.id}
-                onClick={() => {
-                  playPop();
-                  onSelectGame(game.id);
-                }}
-                className="bg-white rounded-3xl border-4 border-amber-200 hover:border-amber-400 shadow-md hover:shadow-xl transition-all cursor-pointer overflow-hidden flex flex-col justify-between btn-card group"
-              >
-                {/* Header card with game banner */}
-                <div className={`p-6 bg-gradient-to-r ${game.themeColor} text-white relative`}>
-                  <div className="w-16 h-16 rounded-2xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md mb-3 group-hover:scale-110 transition-transform">
-                    {getGameIcon(game.icon)}
+            {games.map((game) => {
+              const theme = getGameTheme(game.id);
+
+              return (
+                <div
+                  key={game.id}
+                  onClick={() => {
+                    playPop();
+                    onSelectGame(game.id);
+                  }}
+                  className={`bg-white rounded-3xl border-4 ${theme.border} hover:border-amber-400 shadow-md hover:shadow-xl transition-all cursor-pointer overflow-hidden flex flex-col justify-between btn-card group`}
+                >
+                  {/* Header card with game banner */}
+                  <div className={`p-6 ${theme.headerBg} relative`}>
+                    <div className={`w-16 h-16 rounded-2xl ${theme.iconBg} flex items-center justify-center shadow-md mb-3 group-hover:scale-110 transition-transform`}>
+                      {getGameIcon(game.icon)}
+                    </div>
+                    <h3 className={`text-2xl font-black tracking-tight ${theme.titleColor} drop-shadow-sm`}>
+                      {game.title}
+                    </h3>
+                    <p className={`text-sm ${theme.subtitleColor} font-bold mt-1 line-clamp-1`}>
+                      {game.subtitle}
+                    </p>
                   </div>
-                  <h3 className="text-2xl font-black tracking-tight drop-shadow-sm">
-                    {game.title}
-                  </h3>
-                  <p className="text-xs text-white/90 font-bold mt-1 line-clamp-1">
-                    {game.subtitle}
-                  </p>
-                </div>
 
-                {/* Description & Action */}
-                <div className="p-5 flex-1 flex flex-col justify-between">
-                  <p className="text-sm font-semibold text-slate-600 mb-4 leading-relaxed">
-                    {game.description}
-                  </p>
+                  {/* Description & Action */}
+                  <div className="p-5 flex-1 flex flex-col justify-between">
+                    <p className="text-sm font-bold text-slate-700 mb-4 leading-relaxed">
+                      {game.description}
+                    </p>
 
-                  <div className="flex items-center justify-between pt-3 border-t-2 border-slate-100">
-                    <span className="text-xs font-black text-amber-700 bg-amber-100 px-3 py-1 rounded-full">
-                      Usia {game.minAge}-{game.maxAge} Tahun
-                    </span>
+                    <div className="flex items-center justify-between pt-3 border-t-2 border-slate-100">
+                      <span className={`text-xs font-black ${theme.badgeText} ${theme.badgeBg} px-3 py-1 rounded-full border border-slate-200`}>
+                        Usia {game.minAge}-{game.maxAge} Tahun
+                      </span>
 
-                    <button className="flex items-center gap-1 bg-amber-500 group-hover:bg-amber-600 text-white font-extrabold px-4 py-2 rounded-2xl text-sm shadow-md transition-colors">
-                      <Play className="w-4 h-4 fill-white" />
-                      <span>Mulai</span>
-                    </button>
+                      <button className={`flex items-center gap-1.5 ${theme.buttonBg} ${theme.buttonHover} text-white font-black px-4 py-2 rounded-2xl text-sm shadow-md transition-all active:scale-95`}>
+                        <Play className="w-4 h-4 fill-white" />
+                        <span>Mulai</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>
@@ -158,7 +163,7 @@ export const GameListPage: React.FC<GameListPageProps> = ({
               🏆
             </div>
             <div>
-              <h4 className="font-black text-lg text-purple-900">
+              <h4 className="font-black text-lg text-purple-950">
                 Koleksi Stiker & Hadiah {activeChild?.name}
               </h4>
               <p className="text-xs font-bold text-slate-500">

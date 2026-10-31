@@ -82,15 +82,15 @@ export const AuthPage: React.FC = () => {
     <div className="min-h-screen bg-[#FFF9EE] flex items-center justify-center p-4">
       <div className="max-w-4xl w-full bg-white rounded-3xl border-4 border-amber-300 shadow-2xl overflow-hidden flex flex-col md:flex-row">
         {/* Left Side: Cute Milo Mascot Banner */}
-        <div className="md:w-5/12 bg-gradient-to-br from-amber-400 via-amber-500 to-orange-500 p-8 text-white flex flex-col items-center justify-between text-center relative overflow-hidden">
+        <div className="md:w-5/12 bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 p-8 text-white flex flex-col items-center justify-between text-center relative overflow-hidden">
           <div className="relative z-10">
-            <span className="text-xs uppercase tracking-widest font-black bg-white/20 px-3 py-1 rounded-full">
+            <span className="text-xs uppercase tracking-widest font-black bg-white/25 text-white px-3.5 py-1 rounded-full border border-white/30">
               Khusus Anak Usia 4-7 Tahun
             </span>
-            <h1 className="text-3xl md:text-4xl font-black mt-3 mb-1 drop-shadow-md">
+            <h1 className="text-3xl md:text-4xl font-black mt-3 mb-1.5 drop-shadow-md text-white">
               Milo si Kucing 🐾
             </h1>
-            <p className="text-white/90 text-sm font-bold">
+            <p className="text-amber-100 text-sm font-bold">
               Petualangan Seru Belajar Membaca & Berhitung Tanpa Stres!
             </p>
           </div>
@@ -99,7 +99,7 @@ export const AuthPage: React.FC = () => {
             <MiloCat mood="happy" size="xl" />
           </div>
 
-          <div className="relative z-10 bg-white/15 backdrop-blur-sm rounded-2xl p-3 border border-white/20 text-xs font-bold text-white/95">
+          <div className="relative z-10 bg-white/20 backdrop-blur-sm rounded-2xl p-3.5 border border-white/30 text-xs font-black text-white">
             ✨ Dilengkapi Narasi Suara Indonesia, Mode Ramah Anak, dan Pintu Keamanan Orang Tua!
           </div>
         </div>
@@ -107,7 +107,7 @@ export const AuthPage: React.FC = () => {
         {/* Right Side: Auth Forms */}
         <div className="md:w-7/12 p-6 md:p-8 flex flex-col justify-center">
           {/* Tabs */}
-          <div className="flex bg-slate-100 p-1.5 rounded-2xl mb-6">
+          <div className="flex bg-slate-200 p-1.5 rounded-2xl mb-6">
             <button
               type="button"
               onClick={() => {
@@ -117,8 +117,8 @@ export const AuthPage: React.FC = () => {
               }}
               className={`flex-1 py-2.5 rounded-xl font-black text-sm transition-all ${
                 mode === 'login'
-                  ? 'bg-white text-slate-800 shadow-md scale-100'
-                  : 'text-slate-500 hover:text-slate-800'
+                  ? 'bg-white text-slate-900 shadow-md scale-100'
+                  : 'text-slate-600 hover:text-slate-900'
               }`}
             >
               Masuk (Login)
@@ -132,8 +132,8 @@ export const AuthPage: React.FC = () => {
               }}
               className={`flex-1 py-2.5 rounded-xl font-black text-sm transition-all ${
                 mode === 'register'
-                  ? 'bg-white text-slate-800 shadow-md scale-100'
-                  : 'text-slate-500 hover:text-slate-800'
+                  ? 'bg-white text-slate-900 shadow-md scale-100'
+                  : 'text-slate-600 hover:text-slate-900'
               }`}
             >
               Daftar Akun Baru
@@ -141,8 +141,8 @@ export const AuthPage: React.FC = () => {
           </div>
 
           {error && (
-            <div className="mb-4 p-3 bg-rose-50 border border-rose-200 rounded-2xl text-rose-700 text-xs font-bold flex items-center gap-2">
-              <AlertCircle className="w-4 h-4 flex-shrink-0" />
+            <div className="mb-4 p-3 bg-rose-50 border-2 border-rose-200 rounded-2xl text-rose-800 text-xs font-black flex items-center gap-2">
+              <AlertCircle className="w-4 h-4 flex-shrink-0 text-rose-600" />
               <span>{error}</span>
             </div>
           )}
@@ -151,25 +151,25 @@ export const AuthPage: React.FC = () => {
             {mode === 'register' && (
               <>
                 <div>
-                  <label className="block text-xs font-bold text-slate-600 mb-1">
+                  <label className="block text-xs font-black text-slate-800 mb-1">
                     Nama Lengkap Orang Tua
                   </label>
                   <div className="relative">
-                    <User className="w-5 h-5 absolute left-3.5 top-3 text-slate-400" />
+                    <User className="w-5 h-5 absolute left-3.5 top-3 text-slate-500" />
                     <input
                       type="text"
                       required
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
-                      placeholder="Contoh: Bunda Maya"
-                      className="w-full pl-11 pr-4 py-2.5 bg-slate-50 border-2 border-slate-200 focus:border-amber-400 rounded-2xl font-bold text-sm text-slate-800"
+                      placeholder="Contoh: Bunda Tika"
+                      className="w-full pl-11 pr-4 py-2.5 bg-slate-50 border-2 border-slate-300 focus:border-amber-400 rounded-2xl font-black text-sm text-slate-900 placeholder-slate-400"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-xs font-bold text-slate-600 mb-1">
+                    <label className="block text-xs font-black text-slate-800 mb-1">
                       Nama Panggilan Anak
                     </label>
                     <input
@@ -177,13 +177,13 @@ export const AuthPage: React.FC = () => {
                       required
                       value={childName}
                       onChange={(e) => setChildName(e.target.value)}
-                      placeholder="Contoh: Alif"
-                      className="w-full px-4 py-2.5 bg-slate-50 border-2 border-slate-200 focus:border-amber-400 rounded-2xl font-bold text-sm text-slate-800"
+                      placeholder="Contoh: Azam"
+                      className="w-full px-4 py-2.5 bg-slate-50 border-2 border-slate-300 focus:border-amber-400 rounded-2xl font-black text-sm text-slate-900 placeholder-slate-400"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-slate-600 mb-1">
+                    <label className="block text-xs font-black text-slate-800 mb-1">
                       Usia Anak (Tahun)
                     </label>
                     <input
@@ -193,7 +193,7 @@ export const AuthPage: React.FC = () => {
                       required
                       value={childAge}
                       onChange={(e) => setChildAge(Number(e.target.value))}
-                      className="w-full px-4 py-2.5 bg-slate-50 border-2 border-slate-200 focus:border-amber-400 rounded-2xl font-bold text-sm text-slate-800"
+                      className="w-full px-4 py-2.5 bg-slate-50 border-2 border-slate-300 focus:border-amber-400 rounded-2xl font-black text-sm text-slate-900"
                     />
                   </div>
                 </div>
@@ -201,26 +201,26 @@ export const AuthPage: React.FC = () => {
             )}
 
             <div>
-              <label className="block text-xs font-bold text-slate-600 mb-1">
+              <label className="block text-xs font-black text-slate-800 mb-1">
                 Email Orang Tua
               </label>
               <div className="relative">
-                <Mail className="w-5 h-5 absolute left-3.5 top-3 text-slate-400" />
+                <Mail className="w-5 h-5 absolute left-3.5 top-3 text-slate-500" />
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="orangtua@email.com"
-                  className="w-full pl-11 pr-4 py-2.5 bg-slate-50 border-2 border-slate-200 focus:border-amber-400 rounded-2xl font-bold text-sm text-slate-800"
+                  className="w-full pl-11 pr-4 py-2.5 bg-slate-50 border-2 border-slate-300 focus:border-amber-400 rounded-2xl font-black text-sm text-slate-900 placeholder-slate-400"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-600 mb-1">Kata Sandi</label>
+              <label className="block text-xs font-black text-slate-800 mb-1">Kata Sandi</label>
               <div className="relative">
-                <Lock className="w-5 h-5 absolute left-3.5 top-3 text-slate-400" />
+                <Lock className="w-5 h-5 absolute left-3.5 top-3 text-slate-500" />
                 <input
                   type="password"
                   required
@@ -228,25 +228,25 @@ export const AuthPage: React.FC = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Minimal 6 karakter"
-                  className="w-full pl-11 pr-4 py-2.5 bg-slate-50 border-2 border-slate-200 focus:border-amber-400 rounded-2xl font-bold text-sm text-slate-800"
+                  className="w-full pl-11 pr-4 py-2.5 bg-slate-50 border-2 border-slate-300 focus:border-amber-400 rounded-2xl font-black text-sm text-slate-900 placeholder-slate-400"
                 />
               </div>
             </div>
 
             {mode === 'register' && (
               <div>
-                <label className="block text-xs font-bold text-slate-600 mb-1">
+                <label className="block text-xs font-black text-slate-800 mb-1">
                   4-Digit PIN Pintu Keamanan (Default: 1234)
                 </label>
                 <div className="relative">
-                  <KeyRound className="w-5 h-5 absolute left-3.5 top-3 text-slate-400" />
+                  <KeyRound className="w-5 h-5 absolute left-3.5 top-3 text-slate-500" />
                   <input
                     type="password"
                     maxLength={4}
                     value={parentPin}
                     onChange={(e) => setParentPin(e.target.value)}
                     placeholder="1234"
-                    className="w-full pl-11 pr-4 py-2.5 bg-slate-50 border-2 border-slate-200 focus:border-amber-400 rounded-2xl font-bold text-sm text-slate-800"
+                    className="w-full pl-11 pr-4 py-2.5 bg-slate-50 border-2 border-slate-300 focus:border-amber-400 rounded-2xl font-black text-sm text-slate-900"
                   />
                 </div>
               </div>
@@ -269,11 +269,11 @@ export const AuthPage: React.FC = () => {
           </form>
 
           {/* Quick Demo Parent Account Helper */}
-          <div className="mt-5 pt-4 border-t-2 border-slate-100 text-center">
+          <div className="mt-5 pt-4 border-t-2 border-slate-200 text-center">
             <button
               type="button"
               onClick={handleDemoParentLogin}
-              className="text-xs font-black text-amber-600 hover:text-amber-700 bg-amber-50 hover:bg-amber-100 px-4 py-2 rounded-xl transition-all"
+              className="text-xs font-black text-amber-950 hover:text-amber-900 bg-amber-100 hover:bg-amber-200 border-2 border-amber-300 px-4 py-2.5 rounded-2xl transition-all shadow-xs"
             >
               🚀 Masuk Langsung dengan Akun Demo (Bunda Tika & Azam)
             </button>

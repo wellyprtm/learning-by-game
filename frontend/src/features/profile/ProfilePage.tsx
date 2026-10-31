@@ -104,17 +104,17 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({ onBackToGames }) => {
         <div className="flex items-center gap-3">
           <button
             onClick={onBackToGames}
-            className="flex items-center gap-1.5 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-2xl font-black text-sm shadow-md transition-all active:scale-95"
+            className="flex items-center gap-1.5 px-4 py-2.5 bg-amber-500 hover:bg-amber-600 text-white rounded-2xl font-black text-sm shadow-md transition-all active:scale-95"
           >
             <ArrowLeft className="w-5 h-5" />
             <span>Kembali ke Mode Main</span>
           </button>
 
           <div>
-            <span className="text-xs font-black uppercase text-purple-600 bg-purple-100 px-2.5 py-0.5 rounded-full">
+            <span className="text-xs font-black uppercase text-purple-700 bg-purple-100 px-2.5 py-0.5 rounded-full border border-purple-200">
               Pengaturan
             </span>
-            <h1 className="text-2xl md:text-3xl font-black text-slate-800">
+            <h1 className="text-2xl md:text-3xl font-black text-slate-900 mt-0.5">
               Profil Anak & Orang Tua
             </h1>
           </div>
@@ -122,22 +122,22 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({ onBackToGames }) => {
       </div>
 
       {statusMsg && (
-        <div className="mb-6 p-4 rounded-2xl bg-emerald-100 text-emerald-800 font-bold border border-emerald-300 text-center animate-pop-in">
+        <div className="mb-6 p-4 rounded-2xl bg-emerald-100 text-emerald-900 font-black border border-emerald-300 text-center animate-pop-in shadow-sm">
           {statusMsg}
         </div>
       )}
 
       {/* Child Profile Section */}
-      <div className="bg-white border-2 border-amber-200 rounded-3xl p-6 shadow-sm mb-8">
+      <div className="bg-white border-2 border-amber-300 rounded-3xl p-6 shadow-sm mb-8">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2.5">
-            <User className="w-6 h-6 text-amber-500" />
-            <h2 className="text-xl font-black text-slate-800">Profil Anak Aktif</h2>
+            <User className="w-6 h-6 text-amber-600" />
+            <h2 className="text-xl font-black text-slate-900">Profil Anak Aktif</h2>
           </div>
 
           <button
             onClick={() => setShowAddChild(!showAddChild)}
-            className="flex items-center gap-1 text-xs font-black bg-amber-100 text-amber-800 px-3 py-1.5 rounded-full hover:bg-amber-200"
+            className="flex items-center gap-1 text-xs font-black bg-amber-100 text-amber-900 px-3.5 py-2 rounded-full hover:bg-amber-200 border border-amber-300 transition-colors"
           >
             <Plus className="w-4 h-4" />
             <span>Tambah Anak Lain</span>
@@ -148,33 +148,33 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({ onBackToGames }) => {
         {showAddChild && (
           <form
             onSubmit={handleCreateNewChild}
-            className="mb-6 p-4 bg-amber-50 rounded-2xl border border-amber-300 flex flex-col sm:flex-row gap-3 items-end"
+            className="mb-6 p-4 bg-amber-50 rounded-2xl border-2 border-amber-300 flex flex-col sm:flex-row gap-3 items-end shadow-inner"
           >
             <div className="flex-1 w-full">
-              <label className="block text-xs font-bold text-amber-900 mb-1">Nama Anak Baru</label>
+              <label className="block text-xs font-black text-amber-950 mb-1">Nama Anak Baru</label>
               <input
                 type="text"
                 value={newChildName}
                 onChange={(e) => setNewChildName(e.target.value)}
                 placeholder="Contoh: Budi"
-                className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-sm font-bold"
+                className="w-full bg-white border-2 border-slate-300 focus:border-amber-400 rounded-xl px-3 py-2 text-sm font-bold text-slate-800"
                 required
               />
             </div>
             <div className="w-28">
-              <label className="block text-xs font-bold text-amber-900 mb-1">Usia</label>
+              <label className="block text-xs font-black text-amber-950 mb-1">Usia</label>
               <input
                 type="number"
                 min="3"
                 max="10"
                 value={newChildAge}
                 onChange={(e) => setNewChildAge(Number(e.target.value))}
-                className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-sm font-bold"
+                className="w-full bg-white border-2 border-slate-300 focus:border-amber-400 rounded-xl px-3 py-2 text-sm font-bold text-slate-800"
               />
             </div>
             <button
               type="submit"
-              className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm rounded-xl shadow-sm"
+              className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm rounded-xl shadow-md transition-all active:scale-95"
             >
               Simpan Anak
             </button>
@@ -184,25 +184,25 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({ onBackToGames }) => {
         <form onSubmit={handleSaveChild} className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-bold text-slate-700 mb-1">Nama Anak</label>
+              <label className="block text-sm font-black text-slate-800 mb-1.5">Nama Anak</label>
               <input
                 type="text"
                 value={childName}
                 onChange={(e) => setChildName(e.target.value)}
-                className="w-full bg-slate-50 border-2 border-slate-200 focus:border-amber-400 rounded-2xl px-4 py-2.5 font-bold text-slate-800"
+                className="w-full bg-slate-50 border-2 border-slate-300 focus:border-amber-400 rounded-2xl px-4 py-2.5 font-black text-slate-900"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-sm font-bold text-slate-700 mb-1">Usia Anak (Tahun)</label>
+              <label className="block text-sm font-black text-slate-800 mb-1.5">Usia Anak (Tahun)</label>
               <input
                 type="number"
                 min="3"
                 max="10"
                 value={childAge}
                 onChange={(e) => setChildAge(Number(e.target.value))}
-                className="w-full bg-slate-50 border-2 border-slate-200 focus:border-amber-400 rounded-2xl px-4 py-2.5 font-bold text-slate-800"
+                className="w-full bg-slate-50 border-2 border-slate-300 focus:border-amber-400 rounded-2xl px-4 py-2.5 font-black text-slate-900"
                 required
               />
             </div>
@@ -210,7 +210,7 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({ onBackToGames }) => {
 
           {/* Maskot Avatar Costume Selector */}
           <div>
-            <label className="block text-sm font-black text-slate-800 mb-3">
+            <label className="block text-sm font-black text-slate-900 mb-3">
               Pilih Maskot Kucing Kesukaan Anak:
             </label>
 
@@ -224,17 +224,17 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({ onBackToGames }) => {
                       playPop();
                       setAvatarCat(opt.id);
                     }}
-                    className={`p-3 rounded-2xl border-4 text-center cursor-pointer transition-all ${
+                    className={`p-3.5 rounded-2xl border-4 text-center cursor-pointer transition-all ${
                       isSelected
-                        ? 'border-amber-500 bg-amber-50 shadow-md scale-105'
+                        ? 'border-amber-500 bg-amber-50 shadow-md scale-105 ring-2 ring-amber-300'
                         : 'border-slate-200 hover:border-amber-300 bg-white'
                     }`}
                   >
                     <div className="flex justify-center mb-1">
                       <MiloCat mood="idle" size="sm" avatarCat={opt.id} className="w-16 h-16" />
                     </div>
-                    <p className="font-black text-sm text-slate-800">{opt.label}</p>
-                    <p className="text-[11px] text-slate-400 leading-tight">{opt.desc}</p>
+                    <p className="font-black text-sm text-slate-900">{opt.label}</p>
+                    <p className="text-xs text-slate-500 font-bold leading-tight mt-0.5">{opt.desc}</p>
                   </div>
                 );
               })}
@@ -254,27 +254,27 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({ onBackToGames }) => {
       </div>
 
       {/* Parent Account & Security PIN */}
-      <div className="bg-white border-2 border-blue-200 rounded-3xl p-6 shadow-sm">
+      <div className="bg-white border-2 border-blue-300 rounded-3xl p-6 shadow-sm">
         <div className="flex items-center gap-2.5 mb-4">
-          <Shield className="w-6 h-6 text-blue-500" />
-          <h2 className="text-xl font-black text-slate-800">Pengaturan Orang Tua & PIN Keamanan</h2>
+          <Shield className="w-6 h-6 text-blue-600" />
+          <h2 className="text-xl font-black text-slate-900">Pengaturan Orang Tua & PIN Keamanan</h2>
         </div>
 
         <form onSubmit={handleSaveParent} className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-bold text-slate-700 mb-1">Nama Orang Tua</label>
+              <label className="block text-sm font-black text-slate-800 mb-1.5">Nama Orang Tua</label>
               <input
                 type="text"
                 value={parentName}
                 onChange={(e) => setParentName(e.target.value)}
-                className="w-full bg-slate-50 border-2 border-slate-200 focus:border-blue-400 rounded-2xl px-4 py-2.5 font-bold text-slate-800"
+                className="w-full bg-slate-50 border-2 border-slate-300 focus:border-blue-400 rounded-2xl px-4 py-2.5 font-black text-slate-900"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-sm font-bold text-slate-700 mb-1">
+              <label className="block text-sm font-black text-slate-800 mb-1.5">
                 4-Digit PIN Pintu Keamanan
               </label>
               <input
@@ -282,10 +282,10 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({ onBackToGames }) => {
                 maxLength={4}
                 value={parentPin}
                 onChange={(e) => setParentPin(e.target.value)}
-                className="w-full bg-slate-50 border-2 border-slate-200 focus:border-blue-400 rounded-2xl px-4 py-2.5 font-bold text-slate-800"
+                className="w-full bg-slate-50 border-2 border-slate-300 focus:border-blue-400 rounded-2xl px-4 py-2.5 font-black text-slate-900"
                 required
               />
-              <p className="text-xs text-slate-400 mt-1">
+              <p className="text-xs text-slate-500 font-bold mt-1">
                 PIN ini mencegah anak keluar dari mode permainan atau mengubah setelan.
               </p>
             </div>
