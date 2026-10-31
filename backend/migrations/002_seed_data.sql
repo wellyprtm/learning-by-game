@@ -450,9 +450,13 @@ VALUES
     23
 )
 ON CONFLICT (id) DO UPDATE SET 
+    level_code = EXCLUDED.level_code,
     title = EXCLUDED.title,
     description = EXCLUDED.description,
-    items_json = EXCLUDED.items_json;
+    order_num = EXCLUDED.order_num,
+    activity_type = EXCLUDED.activity_type,
+    items_json = EXCLUDED.items_json,
+    unlock_stars_required = EXCLUDED.unlock_stars_required;
 
 -- ============================================================================
 -- 3. PULAU BERHITUNG (24 STASIUN TINGKAT PERKEMBANGAN ANAK)
@@ -820,9 +824,13 @@ VALUES
     23
 )
 ON CONFLICT (id) DO UPDATE SET 
+    level_code = EXCLUDED.level_code,
     title = EXCLUDED.title,
     description = EXCLUDED.description,
-    items_json = EXCLUDED.items_json;
+    order_num = EXCLUDED.order_num,
+    activity_type = EXCLUDED.activity_type,
+    items_json = EXCLUDED.items_json,
+    unlock_stars_required = EXCLUDED.unlock_stars_required;
 
 -- ============================================================================
 -- 4. PESTA MAKAN MILO (22 STASIUN TINGKAT PERKEMBANGAN ANAK)
@@ -1117,6 +1125,10 @@ VALUES
     21
 )
 ON CONFLICT (id) DO UPDATE SET 
+    level_code = EXCLUDED.level_code,
     title = EXCLUDED.title,
     description = EXCLUDED.description,
-    items_json = EXCLUDED.items_json;
+    order_num = EXCLUDED.order_num,
+    activity_type = EXCLUDED.activity_type,
+    items_json = EXCLUDED.items_json,
+    unlock_stars_required = EXCLUDED.unlock_stars_required;

@@ -541,8 +541,499 @@ export const GameAssetIcon: React.FC<GameAssetIconProps> = ({
     );
   }
 
-  // Safe fallback if not matched: render the text or emoji cleanly
-  if (nameOrEmoji.includes('?') || nameOrEmoji === '') {
+
+  // 39. Cokelat (Chocolate Bar)
+  if (key.includes('cokelat') || key.includes('chocolate') || key.includes('🍫')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <rect x="22" y="24" width="56" height="56" rx="8" fill="#6D4C41" stroke="#4E342E" strokeWidth="3" />
+        <path d="M 22 52 L 78 44 L 78 80 C 78 84, 74 88, 70 88 L 30 88 C 26 88, 22 84, 22 80 Z" fill="#E53935" stroke="#C62828" strokeWidth="2.5" />
+        <path d="M 22 52 L 32 50 L 42 53 L 52 48 L 62 52 L 72 46 L 78 48" stroke="#FFD54F" strokeWidth="2.5" />
+        <rect x="28" y="30" width="20" height="16" rx="2" fill="#8D6E63" stroke="#4E342E" strokeWidth="1.5" />
+        <rect x="52" y="30" width="20" height="16" rx="2" fill="#8D6E63" stroke="#4E342E" strokeWidth="1.5" />
+      </svg>
+    );
+  }
+
+  // 40. Cacing (Earthworm)
+  if (key.includes('cacing') || key.includes('🪱') || key === 'worm') {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <path d="M 20 75 Q 32 55 45 70 T 70 65 Q 82 50 80 32" stroke="#FF8A80" strokeWidth="14" strokeLinecap="round" />
+        <circle cx="80" cy="32" r="10" fill="#FF8A80" />
+        <circle cx="83" cy="30" r="2.5" fill="#2D3436" />
+        <circle cx="76" cy="30" r="2.5" fill="#2D3436" />
+        <path d="M 76 36 Q 80 39 84 36" stroke="#2D3436" strokeWidth="1.5" strokeLinecap="round" />
+        <ellipse cx="87" cy="34" rx="2" ry="1.5" fill="#FF5252" opacity="0.7" />
+      </svg>
+    );
+  }
+
+  // 41. Cincin (Diamond Ring)
+  if (key.includes('cincin') || key.includes('💍') || key === 'ring') {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <circle cx="50" cy="58" r="24" stroke="#F1C40F" strokeWidth="7" fill="none" />
+        <polygon points="50,20 62,32 38,32" fill="#00D2D3" stroke="#01A3A4" strokeWidth="2" />
+        <polygon points="38,32 62,32 56,38 44,38" fill="#54A0FF" />
+        <circle cx="50" cy="28" r="2" fill="#FFFFFF" />
+      </svg>
+    );
+  }
+
+  // 42. Cumi (Squid)
+  if (key.includes('cumi') || key.includes('🦑') || key === 'squid') {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <path d="M 50 18 C 30 18, 32 55, 34 68 L 66 68 C 68 55, 70 18, 50 18 Z" fill="#FF6B81" stroke="#ED4C67" strokeWidth="3" />
+        <polygon points="50,14 36,26 64,26" fill="#ED4C67" />
+        <circle cx="42" cy="52" r="5" fill="#FFFFFF" />
+        <circle cx="42" cy="52" r="2.5" fill="#2D3436" />
+        <circle cx="58" cy="52" r="5" fill="#FFFFFF" />
+        <circle cx="58" cy="52" r="2.5" fill="#2D3436" />
+        <path d="M 36 68 Q 34 85 32 90 M 44 68 Q 44 85 46 92 M 56 68 Q 56 85 54 92 M 64 68 Q 66 85 68 90" stroke="#FF6B81" strokeWidth="4" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  // 43. Ceri (Cherries)
+  if (key.includes('ceri') || key.includes('cherry') || key.includes('🍒')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <path d="M 36 60 Q 48 35 60 22 Q 68 35 68 62" stroke="#27AE60" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M 60 22 Q 74 18 80 24 Q 72 28 60 22" fill="#2ECC71" stroke="#27AE60" strokeWidth="1.5" />
+        <circle cx="34" cy="65" r="16" fill="#E74C3C" stroke="#C0392B" strokeWidth="2.5" />
+        <circle cx="68" cy="65" r="16" fill="#E74C3C" stroke="#C0392B" strokeWidth="2.5" />
+        <circle cx="28" cy="60" r="3.5" fill="#FFA39E" />
+        <circle cx="62" cy="60" r="3.5" fill="#FFA39E" />
+      </svg>
+    );
+  }
+
+  // 44. Bebek (Duck)
+  if (key.includes('bebek') || key.includes('🦆') || key === 'duck') {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <ellipse cx="48" cy="65" rx="30" ry="20" fill="#F1C40F" stroke="#D4AC0D" strokeWidth="3" />
+        <circle cx="62" cy="40" r="15" fill="#F1C40F" stroke="#D4AC0D" strokeWidth="3" />
+        <ellipse cx="76" cy="42" rx="10" ry="5" fill="#E67E22" stroke="#D35400" strokeWidth="1.5" />
+        <circle cx="65" cy="36" r="3" fill="#2D3436" />
+        <circle cx="66" cy="35" r="1" fill="#FFFFFF" />
+      </svg>
+    );
+  }
+
+  // 45. Daun (Leaf)
+  if (key.includes('daun') || key.includes('🍃') || key.includes('leaf')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <path d="M 25 75 Q 25 30 75 25 Q 75 70 25 75 Z" fill="#2ECC71" stroke="#27AE60" strokeWidth="3" />
+        <path d="M 25 75 Q 45 55 75 25" stroke="#27AE60" strokeWidth="2.5" />
+        <path d="M 42 58 Q 50 62 58 64 M 52 48 Q 62 50 68 50" stroke="#27AE60" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  // 46. Durian
+  if (key.includes('durian') || key.includes('🍈')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <ellipse cx="50" cy="54" rx="28" ry="32" fill="#A0D468" stroke="#8CC152" strokeWidth="3" />
+        <path d="M 50 22 L 50 12" stroke="#795548" strokeWidth="4" strokeLinecap="round" />
+        <polygon points="26,45 20,47 26,50" fill="#8CC152" />
+        <polygon points="26,60 19,63 26,66" fill="#8CC152" />
+        <polygon points="74,45 80,47 74,50" fill="#8CC152" />
+        <polygon points="74,60 81,63 74,66" fill="#8CC152" />
+        <circle cx="42" cy="50" r="3" fill="#8CC152" />
+        <circle cx="58" cy="50" r="3" fill="#8CC152" />
+        <circle cx="50" cy="62" r="3" fill="#8CC152" />
+      </svg>
+    );
+  }
+
+  // 47. Gigi (Tooth)
+  if (key.includes('gigi') || key.includes('🦷') || key === 'tooth') {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <path d="M 30 30 C 22 45, 22 65, 35 84 C 42 75, 46 65, 50 65 C 54 65, 58 75, 65 84 C 78 65, 78 45, 70 30 C 62 20, 38 20, 30 30 Z" fill="#FFFFFF" stroke="#BDC3C7" strokeWidth="3" />
+        <circle cx="42" cy="42" r="3" fill="#2D3436" />
+        <circle cx="58" cy="42" r="3" fill="#2D3436" />
+        <path d="M 44 48 Q 50 54 56 48" stroke="#FF5252" strokeWidth="2.5" strokeLinecap="round" />
+        <polygon points="68,26 72,20 76,26 82,30 76,34 72,40 68,34 62,30" fill="#F1C40F" />
+      </svg>
+    );
+  }
+
+  // 48. Gajah (Elephant)
+  if (key.includes('gajah') || key.includes('🐘') || key === 'elephant') {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <ellipse cx="48" cy="54" rx="26" ry="22" fill="#A4B0BE" stroke="#747D8C" strokeWidth="3" />
+        <circle cx="28" cy="44" r="16" fill="#CED6E0" stroke="#747D8C" strokeWidth="2.5" />
+        <path d="M 20 48 Q 12 55 10 70 Q 14 74 18 68 Q 20 56 22 52" fill="#CED6E0" stroke="#747D8C" strokeWidth="2" />
+        <circle cx="26" cy="40" r="3" fill="#2D3436" />
+        <circle cx="27" cy="39" r="1" fill="#FFFFFF" />
+        <ellipse cx="40" cy="42" rx="9" ry="12" fill="#FFA39E" stroke="#747D8C" strokeWidth="2" />
+      </svg>
+    );
+  }
+
+  // 49. Gula (Sugar)
+  if (key.includes('gula') || key.includes('sugar')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <rect x="25" y="42" width="26" height="26" rx="4" fill="#F8F9FA" stroke="#BDC3C7" strokeWidth="2.5" />
+        <rect x="46" y="32" width="28" height="28" rx="4" fill="#FFFFFF" stroke="#BDC3C7" strokeWidth="2.5" />
+        <polygon points="68,22 71,17 74,22 79,25 74,28 71,33 68,28 63,25" fill="#F1C40F" />
+      </svg>
+    );
+  }
+
+  // 50. Gelas (Glass)
+  if (key.includes('gelas') || key.includes('glass')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <path d="M 30 30 L 36 82 C 36 85, 42 88, 50 88 C 58 88, 64 85, 64 82 L 70 30 Z" fill="#E0F7FA" stroke="#00ACC1" strokeWidth="3" />
+        <path d="M 33 52 L 36 80 C 37 83, 43 85, 50 85 C 57 85, 63 83, 64 80 L 67 52 Z" fill="#FF8A80" opacity="0.85" />
+        <line x1="50" y1="16" x2="60" y2="70" stroke="#FFD54F" strokeWidth="4" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  // 51. Hidung (Nose)
+  if (key.includes('hidung') || key.includes('👃') || key === 'nose') {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <path d="M 50 25 Q 56 55 64 62 Q 58 72 50 70 Q 42 72 36 62 Q 44 55 50 25" fill="#FFCCBC" stroke="#FF8A65" strokeWidth="3" />
+        <circle cx="40" cy="65" r="2.5" fill="#D84315" />
+        <circle cx="60" cy="65" r="2.5" fill="#D84315" />
+      </svg>
+    );
+  }
+
+  // 52. Hujan (Rain)
+  if (key.includes('hujan') || key.includes('🌧') || key.includes('rain')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <path d="M 30 52 C 24 52, 20 46, 22 40 C 24 34, 30 32, 34 34 C 36 24, 48 20, 56 26 C 62 20, 74 22, 76 30 C 82 32, 84 40, 80 46 C 82 52, 76 54, 72 52 Z" fill="#B2EBF2" stroke="#00BCD4" strokeWidth="3" />
+        <line x1="36" y1="62" x2="30" y2="76" stroke="#0288D1" strokeWidth="3" strokeLinecap="round" />
+        <line x1="50" y1="62" x2="44" y2="76" stroke="#0288D1" strokeWidth="3" strokeLinecap="round" />
+        <line x1="64" y1="62" x2="58" y2="76" stroke="#0288D1" strokeWidth="3" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  // 53. Jari (Finger)
+  if (key.includes('jari') || key.includes('👉') || key.includes('finger')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <path d="M 25 45 L 54 45 L 75 45 C 80 45, 84 49, 84 54 C 84 59, 80 63, 75 63 L 52 63 L 52 75 C 52 80, 46 84, 40 84 L 25 84 Z" fill="#FFE0B2" stroke="#FB8C00" strokeWidth="3" />
+        <line x1="52" y1="63" x2="68" y2="63" stroke="#FB8C00" strokeWidth="2.5" />
+      </svg>
+    );
+  }
+
+  // 54. Jerapah (Giraffe)
+  if (key.includes('jerapah') || key.includes('🦒') || key.includes('giraffe')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <path d="M 40 90 L 44 45 C 44 38, 48 30, 56 30 C 64 30, 68 38, 68 45 L 64 90 Z" fill="#F1C40F" stroke="#D4AC0D" strokeWidth="3" />
+        <circle cx="56" cy="30" r="14" fill="#F1C40F" stroke="#D4AC0D" strokeWidth="2.5" />
+        <circle cx="52" cy="28" r="2.5" fill="#2D3436" />
+        <circle cx="60" cy="28" r="2.5" fill="#2D3436" />
+        <ellipse cx="48" cy="62" rx="4" ry="6" fill="#D35400" />
+        <ellipse cx="60" cy="74" rx="5" ry="5" fill="#D35400" />
+      </svg>
+    );
+  }
+
+  // 55. Jus (Juice)
+  if (key.includes('jus') || key.includes('🧃') || key.includes('juice')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <rect x="30" y="30" width="40" height="58" rx="6" fill="#FFA726" stroke="#FB8C00" strokeWidth="3" />
+        <circle cx="50" cy="58" r="12" fill="#FFE082" />
+        <line x1="50" y1="16" x2="50" y2="30" stroke="#EF5350" strokeWidth="4" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  // 56. Kipas (Fan)
+  if (key.includes('kipas') || key.includes('🪭') || key.includes('fan')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <path d="M 50 78 L 20 40 Q 50 18 80 40 Z" fill="#FF80AB" stroke="#C51162" strokeWidth="3" />
+        <line x1="50" y1="78" x2="35" y2="32" stroke="#C51162" strokeWidth="2" />
+        <line x1="50" y1="78" x2="50" y2="28" stroke="#C51162" strokeWidth="2" />
+        <line x1="50" y1="78" x2="65" y2="32" stroke="#C51162" strokeWidth="2" />
+        <circle cx="50" cy="78" r="4" fill="#C51162" />
+      </svg>
+    );
+  }
+
+  // 57. Kopi (Coffee)
+  if (key.includes('kopi') || key.includes('☕') || key.includes('coffee')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <rect x="25" y="38" width="45" height="42" rx="8" fill="#8D6E63" stroke="#5D4037" strokeWidth="3" />
+        <path d="M 70 46 C 80 46, 82 64, 70 66" stroke="#5D4037" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M 38 28 Q 42 22 38 16 M 52 28 Q 56 22 52 16" stroke="#BCAAA4" strokeWidth="2.5" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  // 58. Labu (Pumpkin)
+  if (key.includes('labu') || key.includes('🎃') || key.includes('pumpkin')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <ellipse cx="50" cy="56" rx="30" ry="24" fill="#FF9800" stroke="#E65100" strokeWidth="3" />
+        <ellipse cx="50" cy="56" rx="16" ry="24" fill="#FFA726" stroke="#E65100" strokeWidth="2" />
+        <path d="M 50 32 L 50 20 Q 55 18 56 16" stroke="#4CAF50" strokeWidth="4" strokeLinecap="round" fill="none" />
+      </svg>
+    );
+  }
+
+  // 59. Lebah (Bee)
+  if (key.includes('lebah') || key.includes('🐝') || key.includes('bee')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <ellipse cx="48" cy="56" rx="24" ry="18" fill="#F1C40F" stroke="#2D3436" strokeWidth="3" />
+        <path d="M 42 38 L 42 74 M 54 38 L 54 74" stroke="#2D3436" strokeWidth="5" />
+        <circle cx="28" cy="52" r="2.5" fill="#2D3436" />
+        <ellipse cx="45" cy="34" rx="12" ry="7" transform="rotate(-30 45 34)" fill="#E0F7FA" stroke="#00BCD4" strokeWidth="1.5" />
+      </svg>
+    );
+  }
+
+  // 60. Lilin (Candle)
+  if (key.includes('lilin') || key.includes('🕯') || key.includes('candle')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <rect x="40" y="44" width="20" height="42" rx="3" fill="#FF80AB" stroke="#C51162" strokeWidth="2.5" />
+        <line x1="50" y1="44" x2="50" y2="36" stroke="#2D3436" strokeWidth="2.5" />
+        <path d="M 50 18 Q 58 26 50 36 Q 42 26 50 18 Z" fill="#FFD54F" stroke="#FF9800" strokeWidth="1.5" />
+      </svg>
+    );
+  }
+
+  // 61. Meja (Table)
+  if (key.includes('meja') || key.includes('table')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <rect x="18" y="42" width="64" height="12" rx="3" fill="#A1887F" stroke="#5D4037" strokeWidth="3" />
+        <line x1="28" y1="54" x2="28" y2="84" stroke="#5D4037" strokeWidth="5" strokeLinecap="round" />
+        <line x1="72" y1="54" x2="72" y2="84" stroke="#5D4037" strokeWidth="5" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  // 62. Mobil (Car)
+  if (key.includes('mobil') || key.includes('🚗') || key.includes('car')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <path d="M 20 62 L 25 45 Q 35 34 50 34 L 70 34 L 80 50 L 85 62 Z" fill="#E74C3C" stroke="#C0392B" strokeWidth="3" />
+        <circle cx="36" cy="68" r="9" fill="#2D3436" stroke="#FFFFFF" strokeWidth="2" />
+        <circle cx="68" cy="68" r="9" fill="#2D3436" stroke="#FFFFFF" strokeWidth="2" />
+        <rect x="42" y="38" width="16" height="12" rx="2" fill="#E0F7FA" />
+      </svg>
+    );
+  }
+
+  // 63. Mulut (Mouth)
+  if (key.includes('mulut') || key.includes('👄') || key.includes('mouth')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <path d="M 22 50 Q 50 36 78 50 Q 50 78 22 50 Z" fill="#FF5252" stroke="#D32F2F" strokeWidth="3" />
+        <path d="M 32 50 Q 50 56 68 50" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  // 64. Nanas (Pineapple)
+  if (key.includes('nanas') || key.includes('🍍') || key.includes('pineapple')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <ellipse cx="50" cy="60" rx="22" ry="26" fill="#FFA726" stroke="#E65100" strokeWidth="3" />
+        <path d="M 40 40 L 32 20 Q 42 26 50 38 Q 58 26 68 20 L 60 40" fill="#66BB6A" stroke="#2E7D32" strokeWidth="2" />
+        <line x1="36" y1="50" x2="64" y2="70" stroke="#E65100" strokeWidth="1.5" />
+        <line x1="64" y1="50" x2="36" y2="70" stroke="#E65100" strokeWidth="1.5" />
+      </svg>
+    );
+  }
+
+  // 65. Payung (Umbrella)
+  if (key.includes('payung') || key.includes('☂') || key.includes('umbrella')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <path d="M 18 52 Q 50 16 82 52 Q 66 48 50 52 Q 34 48 18 52 Z" fill="#42A5F5" stroke="#1565C0" strokeWidth="3" />
+        <line x1="50" y1="26" x2="50" y2="76" stroke="#795548" strokeWidth="3.5" strokeLinecap="round" />
+        <path d="M 50 76 Q 50 84 44 84" stroke="#795548" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  // 66. Pohon (Tree)
+  if (key.includes('pohon') || key.includes('🌳') || key.includes('tree')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <rect x="44" y="58" width="12" height="28" rx="2" fill="#8D6E63" stroke="#4E342E" strokeWidth="2.5" />
+        <circle cx="50" cy="40" r="24" fill="#66BB6A" stroke="#2E7D32" strokeWidth="3" />
+        <circle cx="36" cy="44" r="14" fill="#81C784" />
+        <circle cx="64" cy="44" r="14" fill="#81C784" />
+      </svg>
+    );
+  }
+
+  // 67. Pulau (Island)
+  if (key.includes('pulau') || key.includes('🏝') || key.includes('island')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <ellipse cx="50" cy="74" rx="36" ry="12" fill="#FFE082" stroke="#FFA000" strokeWidth="2.5" />
+        <path d="M 46 72 Q 48 50 54 42" stroke="#8D6E63" strokeWidth="4" strokeLinecap="round" fill="none" />
+        <path d="M 54 42 Q 40 38 32 46 M 54 42 Q 68 38 76 46 M 54 42 Q 54 28 50 24" stroke="#43A047" strokeWidth="3.5" strokeLinecap="round" fill="none" />
+        <path d="M 14 84 Q 30 80 50 84 Q 70 88 86 84" stroke="#29B6F6" strokeWidth="3" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  // 68. Radio
+  if (key.includes('radio') || key.includes('📻')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <line x1="30" y1="36" x2="20" y2="18" stroke="#78909C" strokeWidth="3" strokeLinecap="round" />
+        <rect x="22" y="36" width="56" height="42" rx="8" fill="#FFB74D" stroke="#E65100" strokeWidth="3" />
+        <circle cx="42" cy="57" r="13" fill="#FFFFFF" stroke="#E65100" strokeWidth="2" />
+        <circle cx="64" cy="50" r="4" fill="#E65100" />
+        <circle cx="64" cy="64" r="4" fill="#E65100" />
+      </svg>
+    );
+  }
+
+  // 69. Rumah (House)
+  if (key.includes('rumah') || key.includes('🏠') || key.includes('house')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <polygon points="50,22 22,46 78,46" fill="#EF5350" stroke="#C62828" strokeWidth="3" />
+        <rect x="28" y="46" width="44" height="38" fill="#FFF59D" stroke="#F57F17" strokeWidth="3" />
+        <rect x="44" y="60" width="12" height="24" fill="#8D6E63" stroke="#4E342E" strokeWidth="2" />
+        <rect x="34" y="52" width="10" height="10" fill="#E0F7FA" stroke="#00ACC1" strokeWidth="1.5" />
+      </svg>
+    );
+  }
+
+  // 70. Sisir (Comb)
+  if (key.includes('sisir') || key.includes('comb')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <rect x="20" y="36" width="60" height="14" rx="4" fill="#AB47BC" stroke="#6A1B9A" strokeWidth="2.5" />
+        <line x1="26" y1="50" x2="26" y2="70" stroke="#6A1B9A" strokeWidth="3" strokeLinecap="round" />
+        <line x1="34" y1="50" x2="34" y2="70" stroke="#6A1B9A" strokeWidth="3" strokeLinecap="round" />
+        <line x1="42" y1="50" x2="42" y2="70" stroke="#6A1B9A" strokeWidth="3" strokeLinecap="round" />
+        <line x1="50" y1="50" x2="50" y2="70" stroke="#6A1B9A" strokeWidth="3" strokeLinecap="round" />
+        <line x1="58" y1="50" x2="58" y2="70" stroke="#6A1B9A" strokeWidth="3" strokeLinecap="round" />
+        <line x1="66" y1="50" x2="66" y2="70" stroke="#6A1B9A" strokeWidth="3" strokeLinecap="round" />
+        <line x1="74" y1="50" x2="74" y2="70" stroke="#6A1B9A" strokeWidth="3" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  // 71. Sosis (Sausage)
+  if (key.includes('sosis') || key.includes('🌭') || key.includes('sausage')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <path d="M 22 62 Q 50 80 78 48 C 84 40, 78 30, 70 34 Q 46 62 26 48 C 18 42, 16 56, 22 62 Z" fill="#E53935" stroke="#B71C1C" strokeWidth="3" />
+        <path d="M 36 54 Q 44 48 48 54 M 54 46 Q 62 40 66 46" stroke="#FFD54F" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+      </svg>
+    );
+  }
+
+  // 72. Tali (Rope)
+  if (key.includes('tali') || key.includes('rope')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <circle cx="50" cy="50" r="24" stroke="#D7CCC8" strokeWidth="12" fill="none" />
+        <circle cx="50" cy="50" r="24" stroke="#8D6E63" strokeWidth="12" strokeDasharray="6 6" fill="none" />
+      </svg>
+    );
+  }
+
+  // 73. Telur (Egg)
+  if (key.includes('telur') || key.includes('🥚') || key.includes('egg')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <path d="M 30 46 C 24 60, 36 78, 54 78 C 72 78, 80 64, 76 48 C 72 32, 54 28, 42 34 Z" fill="#FFFFFF" stroke="#ECEFF1" strokeWidth="3" />
+        <circle cx="52" cy="52" r="14" fill="#FFB300" stroke="#FFA000" strokeWidth="2" />
+        <circle cx="48" cy="48" r="3" fill="#FFFFFF" opacity="0.8" />
+      </svg>
+    );
+  }
+
+  // 74. Tidur (Sleeping Moon)
+  if (key.includes('tidur') || key.includes('moon') || key.includes('sleep')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <path d="M 64 24 C 42 24, 28 42, 34 66 C 38 80, 52 86, 64 82 C 48 76, 44 52, 58 38 C 62 34, 68 30, 64 24 Z" fill="#FDD835" stroke="#FBC02D" strokeWidth="2.5" />
+        <path d="M 44 54 Q 48 58 52 54" stroke="#2D3436" strokeWidth="2" strokeLinecap="round" />
+        <text x="68" y="36" fill="#42A5F5" fontSize="16" fontWeight="bold">Z</text>
+        <text x="76" y="24" fill="#42A5F5" fontSize="12" fontWeight="bold">z</text>
+      </svg>
+    );
+  }
+
+  // 75. Topi (Cap)
+  if (key.includes('topi') || key.includes('🧢') || key.includes('cap')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <path d="M 26 58 C 26 36, 68 36, 68 58 Z" fill="#1E88E5" stroke="#1565C0" strokeWidth="3" />
+        <path d="M 26 58 L 84 62 C 86 64, 82 68, 76 68 L 26 64 Z" fill="#1565C0" stroke="#0D47A1" strokeWidth="2" />
+        <circle cx="47" cy="38" r="3" fill="#FFD54F" />
+      </svg>
+    );
+  }
+
+  // 76. Tupai (Squirrel)
+  if (key.includes('tupai') || key.includes('🐿') || key.includes('squirrel')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <ellipse cx="44" cy="58" rx="16" ry="20" fill="#8D6E63" stroke="#5D4037" strokeWidth="2.5" />
+        <circle cx="44" cy="36" r="12" fill="#8D6E63" stroke="#5D4037" strokeWidth="2.5" />
+        <circle cx="48" cy="35" r="2.5" fill="#2D3436" />
+        <path d="M 52 74 C 74 74, 84 50, 76 34 C 70 24, 60 28, 62 36 C 64 44, 72 48, 62 64 Z" fill="#A1887F" stroke="#5D4037" strokeWidth="2.5" />
+      </svg>
+    );
+  }
+
+  // 77. Ulat (Caterpillar)
+  if (key.includes('ulat') || key.includes('🐛') || key.includes('caterpillar')) {
+    return (
+      <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
+        <circle cx="70" cy="46" r="12" fill="#81C784" stroke="#2E7D32" strokeWidth="2.5" />
+        <circle cx="54" cy="52" r="10" fill="#A5D6A7" stroke="#2E7D32" strokeWidth="2" />
+        <circle cx="40" cy="52" r="9" fill="#A5D6A7" stroke="#2E7D32" strokeWidth="2" />
+        <circle cx="28" cy="54" r="8" fill="#A5D6A7" stroke="#2E7D32" strokeWidth="2" />
+        <circle cx="74" cy="44" r="2" fill="#2D3436" />
+        <line x1="72" y1="36" x2="76" y2="26" stroke="#2E7D32" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  // Mapping fallback for all Indonesian items in curriculum
+  const EMOJI_MAP: Record<string, string> = {
+    desa: '🏡', dinding: '🧱', ember: '🪣', gol: '⚽', hewan: '🐶',
+    hotel: '🏨', joran: '🎣', kaki: '🦶', loket: '🎟️', nenek: '👵',
+    nila: '🐟', nomor: '🔢', nuri: '🦜', pipi: '😊', rem: '🛑', rimba: '🌴'
+  };
+
+  if (EMOJI_MAP[key]) {
+    return (
+      <span className={`${sizeClasses[size]} select-none inline-flex items-center justify-center ${className}`}>
+        {EMOJI_MAP[key]}
+      </span>
+    );
+  }
+
+  // Safe fallback if not matched or placeholder
+  if (nameOrEmoji.includes('?') || nameOrEmoji === '' || /^[a-zA-Z\s]{3,}$/.test(nameOrEmoji)) {
     return (
       <svg viewBox="0 0 100 100" className={`${sizeClasses[size]} ${className}`} fill="none">
         <polygon
@@ -551,6 +1042,7 @@ export const GameAssetIcon: React.FC<GameAssetIconProps> = ({
           stroke="#F39C12"
           strokeWidth="3"
         />
+        <circle cx="50" cy="50" r="12" fill="#FFFFFF" opacity="0.6" />
       </svg>
     );
   }
