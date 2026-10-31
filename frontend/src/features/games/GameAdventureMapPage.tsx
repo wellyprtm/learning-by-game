@@ -82,7 +82,7 @@ export const GameAdventureMapPage: React.FC<GameAdventureMapPageProps> = ({
             playPop();
             onBack();
           }}
-          className="flex items-center gap-1.5 px-4 py-2 bg-white border-2 border-slate-200 hover:border-amber-400 rounded-2xl text-slate-700 font-extrabold text-sm md:text-base shadow-xs active:scale-95 transition-all"
+          className="flex items-center gap-1.5 px-4 py-2 bg-white border-2 border-slate-200 hover:border-amber-400 rounded-2xl text-slate-700 font-extrabold text-sm md:text-base shadow-sm active:scale-95 transition-all"
         >
           <ArrowLeft className="w-5 h-5 text-amber-600" />
           <span>Pilih Game Lain</span>
@@ -101,8 +101,8 @@ export const GameAdventureMapPage: React.FC<GameAdventureMapPageProps> = ({
         className={`relative overflow-hidden rounded-3xl p-6 mb-8 text-white shadow-lg bg-gradient-to-r ${game.themeColor}`}
       >
         <div className="relative z-10 max-w-lg">
-          <h2 className="text-2xl md:text-3xl font-black mb-1 drop-shadow-xs">{game.subtitle}</h2>
-          <p className="text-white/90 text-sm md:text-base font-bold drop-shadow-xs">
+          <h2 className="text-2xl md:text-3xl font-black mb-1 drop-shadow-sm">{game.subtitle}</h2>
+          <p className="text-white/90 text-sm md:text-base font-bold drop-shadow-sm">
             {game.description}
           </p>
         </div>
@@ -183,7 +183,7 @@ export const GameAdventureMapPage: React.FC<GameAdventureMapPageProps> = ({
 
                 {/* Level Title Label */}
                 <div
-                  className={`bg-white border-2 rounded-2xl p-3 shadow-xs max-w-[200px] md:max-w-[240px] ${
+                  className={`bg-white border-2 rounded-2xl p-3 shadow-sm max-w-[200px] md:max-w-[240px] ${
                     isUnlocked
                       ? 'border-amber-300 text-slate-800'
                       : 'border-slate-200 text-slate-400'

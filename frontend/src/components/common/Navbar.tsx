@@ -40,7 +40,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, totalSt
             }}
             className="flex items-center gap-2 cursor-pointer group"
           >
-            <div className="w-12 h-12 bg-amber-100 rounded-2xl p-1 border-2 border-amber-300 flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 bg-amber-100 rounded-2xl p-1 border-2 border-amber-300 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
               <MiloCat mood="idle" size="sm" avatarCat={activeChild?.avatarCat} className="w-10 h-10" />
             </div>
 
@@ -62,7 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, totalSt
           {/* Quick Stats: Stars & Nav Actions */}
           <div className="flex items-center gap-2 md:gap-3">
             {/* Stars Counter */}
-            <div className="flex items-center gap-1.5 bg-amber-50 border-2 border-amber-300 px-3 py-1.5 rounded-2xl shadow-xs">
+            <div className="flex items-center gap-1.5 bg-amber-50 border-2 border-amber-300 px-3 py-1.5 rounded-2xl shadow-sm">
               <span className="text-xl">⭐</span>
               <span className="font-black text-amber-700 text-lg md:text-xl">{totalStars}</span>
             </div>
@@ -87,7 +87,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, totalSt
             <button
               onClick={() => handleProtectedNav('dashboard')}
               title="Dashboard Orang Tua"
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-2xl font-extrabold text-sm border-2 transition-all shadow-xs ${
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-2xl font-extrabold text-sm border-2 transition-all shadow-sm ${
                 currentView === 'dashboard'
                   ? 'bg-blue-600 text-white border-blue-700'
                   : 'bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100'
@@ -101,7 +101,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, totalSt
             <button
               onClick={() => handleProtectedNav('profile')}
               title="Pengaturan Profil"
-              className={`p-2 rounded-2xl border-2 transition-all shadow-xs ${
+              className={`p-2 rounded-2xl border-2 transition-all shadow-sm ${
                 currentView === 'profile'
                   ? 'bg-purple-600 text-white border-purple-700'
                   : 'bg-purple-50 text-purple-700 border-purple-200 hover:bg-purple-100'

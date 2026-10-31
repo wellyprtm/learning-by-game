@@ -116,10 +116,10 @@ export const GameListPage: React.FC<GameListPageProps> = ({
               >
                 {/* Header card with game banner */}
                 <div className={`p-6 bg-gradient-to-r ${game.themeColor} text-white relative`}>
-                  <div className="w-16 h-16 rounded-2xl bg-white/90 backdrop-blur-xs flex items-center justify-center shadow-md mb-3 group-hover:scale-110 transition-transform">
+                  <div className="w-16 h-16 rounded-2xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md mb-3 group-hover:scale-110 transition-transform">
                     {getGameIcon(game.icon)}
                   </div>
-                  <h3 className="text-2xl font-black tracking-tight drop-shadow-xs">
+                  <h3 className="text-2xl font-black tracking-tight drop-shadow-sm">
                     {game.title}
                   </h3>
                   <p className="text-xs text-white/90 font-bold mt-1 line-clamp-1">
@@ -172,7 +172,7 @@ export const GameListPage: React.FC<GameListPageProps> = ({
               <div
                 key={r.id}
                 title={r.name}
-                className="w-12 h-12 bg-amber-50 border-2 border-amber-300 rounded-2xl flex items-center justify-center text-2xl shadow-xs animate-pop-in"
+                className="w-12 h-12 bg-amber-50 border-2 border-amber-300 rounded-2xl flex items-center justify-center text-2xl shadow-sm animate-pop-in"
               >
                 {r.icon}
               </div>

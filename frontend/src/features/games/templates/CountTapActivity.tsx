@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAudio } from '../../../context/AudioContext';
 import { MiloCat } from '../../../components/mascot/MiloCat';
 import { AudioNarratorBubble } from '../../../components/common/AudioNarratorBubble';
+import { GameAssetIcon } from '../../../components/common/GameAssetIcon';
 
 interface CountTapProps {
   level: any;
@@ -149,13 +150,13 @@ export const CountTapActivity: React.FC<CountTapProps> = ({
             <button
               key={itemIdx}
               onClick={() => handleItemTap(itemIdx)}
-              className={`relative w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center text-5xl md:text-6xl transition-all transform active:scale-90 select-none ${
+              className={`relative w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center transition-all transform active:scale-90 select-none ${
                 isTapped
                   ? 'bg-amber-100 border-4 border-amber-400 scale-105 shadow-md'
-                  : 'bg-slate-50 border-2 border-slate-200 hover:scale-105 shadow-xs cursor-pointer'
+                  : 'bg-slate-50 border-2 border-slate-200 hover:scale-105 shadow-sm cursor-pointer'
               }`}
             >
-              <span>{currentQ.itemEmoji || '🍎'}</span>
+              <GameAssetIcon nameOrEmoji={currentQ.itemEmoji || currentQ.audioText || 'apel'} size="lg" />
 
               {isTapped && (
                 <span className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-emerald-500 text-white font-black text-sm flex items-center justify-center shadow-md animate-pop-in">

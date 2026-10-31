@@ -67,7 +67,7 @@ export const PinModal: React.FC<PinModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
       <div className="bg-white rounded-3xl max-w-sm w-full p-6 text-center shadow-2xl relative border-4 border-slate-200">
         <button
           onClick={onClose}
@@ -106,7 +106,7 @@ export const PinModal: React.FC<PinModalProps> = ({
               key={digit}
               disabled={isVerifying}
               onClick={() => handleDigit(digit)}
-              className="h-14 rounded-2xl bg-slate-50 hover:bg-amber-50 border border-slate-200 text-2xl font-black text-slate-700 active:scale-95 transition-all shadow-xs"
+              className="h-14 rounded-2xl bg-slate-50 hover:bg-amber-50 border border-slate-200 text-2xl font-black text-slate-700 active:scale-95 transition-all shadow-sm"
             >
               {digit}
             </button>
@@ -115,14 +115,14 @@ export const PinModal: React.FC<PinModalProps> = ({
           <button
             disabled={isVerifying}
             onClick={() => handleDigit('0')}
-            className="h-14 rounded-2xl bg-slate-50 hover:bg-amber-50 border border-slate-200 text-2xl font-black text-slate-700 active:scale-95 transition-all shadow-xs"
+            className="h-14 rounded-2xl bg-slate-50 hover:bg-amber-50 border border-slate-200 text-2xl font-black text-slate-700 active:scale-95 transition-all shadow-sm"
           >
             0
           </button>
           <button
             disabled={isVerifying || pin.length === 0}
             onClick={handleBackspace}
-            className="h-14 rounded-2xl bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-600 flex items-center justify-center active:scale-95 transition-all shadow-xs"
+            className="h-14 rounded-2xl bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-600 flex items-center justify-center active:scale-95 transition-all shadow-sm"
           >
             <Delete className="w-6 h-6" />
           </button>

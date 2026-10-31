@@ -93,7 +93,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ onBackToGames }) =
           {/* Top Quick Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {/* Total Stars */}
-            <div className="bg-white border-2 border-amber-200 rounded-3xl p-5 shadow-xs flex items-center gap-3.5">
+            <div className="bg-white border-2 border-amber-200 rounded-3xl p-5 shadow-sm flex items-center gap-3.5">
               <div className="w-12 h-12 bg-amber-100 text-amber-500 rounded-2xl flex items-center justify-center text-2xl shadow-inner">
                 ⭐
               </div>
@@ -106,7 +106,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ onBackToGames }) =
             </div>
 
             {/* Levels Completed */}
-            <div className="bg-white border-2 border-emerald-200 rounded-3xl p-5 shadow-xs flex items-center gap-3.5">
+            <div className="bg-white border-2 border-emerald-200 rounded-3xl p-5 shadow-sm flex items-center gap-3.5">
               <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center shadow-inner">
                 <CheckCircle2 className="w-7 h-7" />
               </div>
@@ -119,7 +119,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ onBackToGames }) =
             </div>
 
             {/* Total Play Minutes */}
-            <div className="bg-white border-2 border-blue-200 rounded-3xl p-5 shadow-xs flex items-center gap-3.5">
+            <div className="bg-white border-2 border-blue-200 rounded-3xl p-5 shadow-sm flex items-center gap-3.5">
               <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center shadow-inner">
                 <Clock className="w-7 h-7" />
               </div>
@@ -132,7 +132,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ onBackToGames }) =
             </div>
 
             {/* Active Child Profile */}
-            <div className="bg-white border-2 border-purple-200 rounded-3xl p-5 shadow-xs flex items-center gap-3.5">
+            <div className="bg-white border-2 border-purple-200 rounded-3xl p-5 shadow-sm flex items-center gap-3.5">
               <div className="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center overflow-hidden">
                 <MiloCat mood="idle" size="sm" avatarCat={summary.child.avatarCat} className="w-10 h-10" />
               </div>
@@ -149,7 +149,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ onBackToGames }) =
           {/* Mastery Progress Bars */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Reading Track */}
-            <div className="bg-white border-2 border-amber-200 rounded-3xl p-6 shadow-xs">
+            <div className="bg-white border-2 border-amber-200 rounded-3xl p-6 shadow-sm">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2.5">
                   <BookOpen className="w-6 h-6 text-amber-500" />
@@ -172,7 +172,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ onBackToGames }) =
             </div>
 
             {/* Counting Track */}
-            <div className="bg-white border-2 border-emerald-200 rounded-3xl p-6 shadow-xs">
+            <div className="bg-white border-2 border-emerald-200 rounded-3xl p-6 shadow-sm">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2.5">
                   <Sparkles className="w-6 h-6 text-emerald-500" />
@@ -196,7 +196,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ onBackToGames }) =
           </div>
 
           {/* Sticker Album & Badges */}
-          <div className="bg-white border-2 border-purple-200 rounded-3xl p-6 shadow-xs">
+          <div className="bg-white border-2 border-purple-200 rounded-3xl p-6 shadow-sm">
             <h3 className="font-black text-xl text-slate-800 mb-4 flex items-center gap-2">
               <Award className="w-6 h-6 text-purple-600" />
               <span>Album Stiker & Penghargaan yang Diraih</span>
@@ -207,7 +207,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ onBackToGames }) =
                 {summary.recentRewards.map((r) => (
                   <div
                     key={r.id}
-                    className="bg-purple-50/60 border-2 border-purple-200 rounded-3xl p-4 text-center shadow-xs flex flex-col items-center justify-between"
+                    className="bg-purple-50/60 border-2 border-purple-200 rounded-3xl p-4 text-center shadow-sm flex flex-col items-center justify-between"
                   >
                     <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-4xl shadow-sm mb-2">
                       {r.icon}
@@ -227,7 +227,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ onBackToGames }) =
           {/* Activity Logs & Offline Tips (2 Columns) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Recent Activity Log */}
-            <div className="bg-white border-2 border-slate-200 rounded-3xl p-6 shadow-xs">
+            <div className="bg-white border-2 border-slate-200 rounded-3xl p-6 shadow-sm">
               <h3 className="font-black text-lg text-slate-800 mb-3 flex items-center gap-2">
                 <Clock className="w-5 h-5 text-blue-500" />
                 <span>Riwayat Sesi Belajar Terakhir</span>
@@ -269,7 +269,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ onBackToGames }) =
             </div>
 
             {/* Offline Parent Suggestions */}
-            <div className="bg-amber-50/70 border-2 border-amber-200 rounded-3xl p-6 shadow-xs">
+            <div className="bg-amber-50/70 border-2 border-amber-200 rounded-3xl p-6 shadow-sm">
               <h3 className="font-black text-lg text-amber-900 mb-3 flex items-center gap-2">
                 <Lightbulb className="w-5 h-5 text-amber-600" />
                 <span>Tips Aktivitas Nyata Bersama Anak di Rumah</span>

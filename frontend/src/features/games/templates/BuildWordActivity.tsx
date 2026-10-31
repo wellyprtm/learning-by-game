@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAudio } from '../../../context/AudioContext';
 import { MiloCat } from '../../../components/mascot/MiloCat';
 import { AudioNarratorBubble } from '../../../components/common/AudioNarratorBubble';
+import { GameAssetIcon } from '../../../components/common/GameAssetIcon';
 import { RotateCcw } from 'lucide-react';
 
 interface BuildWordProps {
@@ -125,7 +126,7 @@ export const BuildWordActivity: React.FC<BuildWordProps> = ({
 
       {/* Visual Target Word Card */}
       <div className="bg-white border-4 border-amber-300 rounded-3xl p-4 shadow-md flex items-center gap-4 my-3">
-        <span className="text-5xl md:text-6xl">{currentQ.icon}</span>
+        <GameAssetIcon nameOrEmoji={currentQ.icon || currentQ.word} size="lg" />
         <div>
           <span className="text-xs uppercase font-extrabold text-amber-600 tracking-wider">
             Petunjuk Gambar
@@ -143,13 +144,17 @@ export const BuildWordActivity: React.FC<BuildWordProps> = ({
           return (
             <div
               key={idx}
-              className={`w-28 h-28 md:w-36 md:h-36 rounded-3xl border-4 flex items-center justify-center font-black text-3xl md:text-4xl transition-all shadow-inner ${
+              className={`w-28 h-28 md:w-36 md:h-36 rounded-3xl border-4 flex flex-col items-center justify-center font-black text-3xl md:text-4xl transition-all shadow-inner ${
                 filled
                   ? 'bg-amber-100 border-amber-500 text-amber-900 scale-105 shadow-md'
-                  : 'bg-slate-50 border-dashed border-slate-300 text-slate-300'
+                  : 'bg-slate-50 border-dashed border-amber-300 text-slate-300'
               }`}
             >
-              {filled || '?'}
+              {filled ? (
+                <span>{filled}</span>
+              ) : (
+                <span className="text-amber-200 text-2xl select-none">🐾</span>
+              )}
             </div>
           );
         })}

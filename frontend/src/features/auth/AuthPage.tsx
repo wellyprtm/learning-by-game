@@ -99,7 +99,7 @@ export const AuthPage: React.FC = () => {
             <MiloCat mood="happy" size="xl" />
           </div>
 
-          <div className="relative z-10 bg-white/15 backdrop-blur-xs rounded-2xl p-3 border border-white/20 text-xs font-bold text-white/95">
+          <div className="relative z-10 bg-white/15 backdrop-blur-sm rounded-2xl p-3 border border-white/20 text-xs font-bold text-white/95">
             ✨ Dilengkapi Narasi Suara Indonesia, Mode Ramah Anak, dan Pintu Keamanan Orang Tua!
           </div>
         </div>

@@ -37,7 +37,7 @@ const MainApp: React.FC = () => {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-[#FFF9EE] flex flex-col items-center justify-center p-4">
-        <div className="w-16 h-16 border-6 border-amber-400 border-t-transparent rounded-full animate-spin mb-4" />
+        <div className="w-16 h-16 border-4 border-amber-400 border-t-transparent rounded-full animate-spin mb-4" />
         <p className="text-2xl font-black text-amber-700">Milo sedang bersiap...</p>
       </div>
     );

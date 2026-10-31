@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAudio } from '../../../context/AudioContext';
 import { MiloCat } from '../../../components/mascot/MiloCat';
 import { AudioNarratorBubble } from '../../../components/common/AudioNarratorBubble';
+import { GameAssetIcon } from '../../../components/common/GameAssetIcon';
 
 interface FeedMascotProps {
   level: any;
@@ -30,7 +31,7 @@ export const FeedMascotActivity: React.FC<FeedMascotProps> = ({
   const numB = currentQ.numB ?? 1;
   const isSubtraction = currentQ.operation === '-';
   const expectedResult = currentQ.result ?? currentQ.targetCount ?? (isSubtraction ? numA - numB : numA + numB);
-  const emoji = currentQ.itemEmoji || '🐟';
+  const emoji = currentQ.itemEmoji || 'ikan';
 
   const handleFeed = (chosenNumber: number) => {
     playPop();
@@ -117,9 +118,7 @@ export const FeedMascotActivity: React.FC<FeedMascotProps> = ({
         <div className="flex flex-col items-center">
           <div className="w-24 h-24 md:w-32 md:h-32 bg-amber-50 border-4 border-amber-200 rounded-full flex flex-wrap items-center justify-center p-2 shadow-inner gap-1">
             {Array.from({ length: numA }).map((_, i) => (
-              <span key={i} className="text-2xl md:text-3xl animate-float">
-                {emoji}
-              </span>
+              <GameAssetIcon key={i} nameOrEmoji={emoji} size="sm" />
             ))}
           </div>
           <span className="mt-2 font-black text-2xl text-slate-700">{numA}</span>
@@ -134,14 +133,12 @@ export const FeedMascotActivity: React.FC<FeedMascotProps> = ({
         <div className="flex flex-col items-center">
           <div className="w-24 h-24 md:w-32 md:h-32 bg-amber-50 border-4 border-amber-200 rounded-full flex flex-wrap items-center justify-center p-2 shadow-inner gap-1">
             {Array.from({ length: numB }).map((_, i) => (
-              <span
+              <div
                 key={i}
-                className={`text-2xl md:text-3xl ${
-                  isSubtraction ? 'opacity-40 grayscale line-through' : 'animate-float'
-                }`}
+                className={isSubtraction ? 'opacity-30 grayscale' : 'animate-float'}
               >
-                {emoji}
-              </span>
+                <GameAssetIcon nameOrEmoji={emoji} size="sm" />
+              </div>
             ))}
           </div>
           <span className="mt-2 font-black text-2xl text-slate-700">{numB}</span>
@@ -153,9 +150,13 @@ export const FeedMascotActivity: React.FC<FeedMascotProps> = ({
         {/* Result Plate */}
         <div className="flex flex-col items-center">
           <div className="w-24 h-24 md:w-32 md:h-32 bg-emerald-50 border-4 border-dashed border-emerald-300 rounded-full flex items-center justify-center shadow-inner">
-            <span className="font-black text-3xl md:text-4xl text-emerald-600">
-              {selectedCorrect !== null ? selectedCorrect : '?'}
-            </span>
+            {selectedCorrect !== null ? (
+              <span className="font-black text-3xl md:text-4xl text-emerald-600 animate-pop-in">
+                {selectedCorrect}
+              </span>
+            ) : (
+              <span className="text-emerald-300 text-3xl">🥣</span>
+            )}
           </div>
           <span className="mt-2 text-xs font-bold text-slate-400">Piring Milo</span>
         </div>

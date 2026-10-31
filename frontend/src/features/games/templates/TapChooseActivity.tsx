@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAudio } from '../../../context/AudioContext';
 import { MiloCat } from '../../../components/mascot/MiloCat';
 import { AudioNarratorBubble } from '../../../components/common/AudioNarratorBubble';
+import { GameAssetIcon } from '../../../components/common/GameAssetIcon';
 
 interface TapChooseProps {
   level: any;
@@ -54,7 +55,6 @@ export const TapChooseActivity: React.FC<TapChooseProps> = ({
         if (currentIndex + 1 < questions.length) {
           setCurrentIndex(currentIndex + 1);
         } else {
-          // Finished level!
           onComplete({
             correct: nextCorrect,
             wrong: wrongCount,
@@ -118,10 +118,10 @@ export const TapChooseActivity: React.FC<TapChooseProps> = ({
         </div>
       </div>
 
-      {/* Question Visual Card (if item has emoji/icon) */}
+      {/* Question Visual Card */}
       {currentQ.icon && (
         <div className="my-2 bg-amber-100/70 border-2 border-amber-300 px-6 py-2.5 rounded-3xl flex items-center gap-3 shadow-inner">
-          <span className="text-4xl md:text-5xl">{currentQ.icon}</span>
+          <GameAssetIcon nameOrEmoji={currentQ.icon || currentQ.target} size="md" />
           {currentQ.hint && (
             <span className="text-amber-900 font-extrabold text-base md:text-lg">
               {currentQ.hint}
@@ -131,7 +131,7 @@ export const TapChooseActivity: React.FC<TapChooseProps> = ({
       )}
 
       {/* Tap Target Options */}
-      <div className="w-full max-w-2xl grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 my-6">
+      <div className="w-full max-w-2xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 my-6">
         {currentQ.options?.map((opt: string, idx: number) => {
           const isThisCorrect = selectedCorrect === opt;
           const isThisWrong = selectedWrong === opt;
@@ -141,11 +141,11 @@ export const TapChooseActivity: React.FC<TapChooseProps> = ({
               key={idx}
               disabled={selectedCorrect !== null}
               onClick={() => handleSelect(opt)}
-              className={`min-h-[110px] md:min-h-[140px] rounded-3xl font-black text-3xl md:text-5xl flex items-center justify-center p-4 border-4 transition-all transform active:scale-95 btn-kid ${
+              className={`min-h-[100px] md:min-h-[120px] rounded-3xl font-black text-2xl md:text-4xl flex items-center justify-center p-4 border-4 transition-all transform active:scale-95 btn-kid ${
                 isThisCorrect
                   ? 'bg-emerald-400 border-emerald-600 text-white scale-105 shadow-xl animate-glow'
                   : isThisWrong
-                  ? 'bg-rose-200 border-rose-400 text-rose-800 animate-shake'
+                  ? 'bg-rose-200 border-rose-400 text-rose-800'
                   : 'bg-white hover:bg-amber-50 border-amber-300 text-slate-800 hover:border-amber-400 shadow-md'
               }`}
             >

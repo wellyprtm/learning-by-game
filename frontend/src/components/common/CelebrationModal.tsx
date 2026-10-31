@@ -58,8 +58,8 @@ export const CelebrationModal: React.FC<CelebrationModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 animate-pop-in">
-      <div className="bg-white border-6 border-amber-400 rounded-3xl max-w-md w-full p-6 text-center shadow-2xl relative overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-pop-in">
+      <div className="bg-white border-4 border-amber-400 rounded-3xl max-w-md w-full p-6 text-center shadow-2xl relative overflow-hidden">
         {/* Festive Background Ribbon */}
         <div className="absolute -top-10 -left-10 w-28 h-28 bg-yellow-200 rounded-full blur-xl pointer-events-none" />
         <div className="absolute -bottom-10 -right-10 w-28 h-28 bg-pink-200 rounded-full blur-xl pointer-events-none" />

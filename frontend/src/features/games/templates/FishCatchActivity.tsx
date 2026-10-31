@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAudio } from '../../../context/AudioContext';
 import { MiloCat } from '../../../components/mascot/MiloCat';
 import { AudioNarratorBubble } from '../../../components/common/AudioNarratorBubble';
+import { GameAssetIcon } from '../../../components/common/GameAssetIcon';
 
 interface FishCatchProps {
   level: any;
@@ -156,9 +157,9 @@ export const FishCatchActivity: React.FC<FishCatchProps> = ({
       </div>
 
       {/* Interactive Water Pond */}
-      <div className="relative w-full max-w-3xl h-[360px] bg-gradient-to-b from-sky-200 to-blue-400 rounded-3xl border-6 border-sky-300 shadow-xl overflow-hidden my-4 select-none">
+      <div className="relative w-full max-w-3xl h-[360px] bg-gradient-to-b from-sky-200 to-blue-400 rounded-3xl border-4 border-sky-300 shadow-xl overflow-hidden my-4 select-none">
         {/* Water wave decoration */}
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-blue-500/20 rounded-t-3xl backdrop-blur-2xs pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-blue-500/20 rounded-t-3xl backdrop-blur-sm pointer-events-none" />
 
         {/* Swimming fishes */}
         {fishes.map((fish) => (
@@ -172,9 +173,7 @@ export const FishCatchActivity: React.FC<FishCatchProps> = ({
             }}
             className="absolute p-2 cursor-pointer transition-transform duration-75 active:scale-125 focus:outline-none"
           >
-            <span className="text-5xl md:text-6xl drop-shadow-md select-none inline-block">
-              {fish.emoji}
-            </span>
+            <GameAssetIcon nameOrEmoji={fish.emoji || 'ikan'} size="lg" className="drop-shadow-md select-none inline-block" />
           </button>
         ))}
 

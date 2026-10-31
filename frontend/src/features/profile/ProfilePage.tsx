@@ -128,7 +128,7 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({ onBackToGames }) => {
       )}
 
       {/* Child Profile Section */}
-      <div className="bg-white border-2 border-amber-200 rounded-3xl p-6 shadow-xs mb-8">
+      <div className="bg-white border-2 border-amber-200 rounded-3xl p-6 shadow-sm mb-8">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2.5">
             <User className="w-6 h-6 text-amber-500" />
@@ -174,7 +174,7 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({ onBackToGames }) => {
             </div>
             <button
               type="submit"
-              className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm rounded-xl shadow-xs"
+              className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm rounded-xl shadow-sm"
             >
               Simpan Anak
             </button>
@@ -254,7 +254,7 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({ onBackToGames }) => {
       </div>
 
       {/* Parent Account & Security PIN */}
-      <div className="bg-white border-2 border-blue-200 rounded-3xl p-6 shadow-xs">
+      <div className="bg-white border-2 border-blue-200 rounded-3xl p-6 shadow-sm">
         <div className="flex items-center gap-2.5 mb-4">
           <Shield className="w-6 h-6 text-blue-500" />
           <h2 className="text-xl font-black text-slate-800">Pengaturan Orang Tua & PIN Keamanan</h2>
